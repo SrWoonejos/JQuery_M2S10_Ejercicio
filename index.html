@@ -1,44 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script
-  src="https://code.jquery.com/jquery-2.2.4.min.js"
-  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  crossorigin="anonymous"></script>
-
-  <!-- Bootstrap CSS -->
-  <link
-  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootst
-  rap.min.css" rel="stylesheet"
-   integrity="sha384-
-  EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-  crossorigin="anonymous">
-
-   <!-- CSS -->
-   <link rel="stylesheet" href="Assets/CSS/style.css">
-
-   <!-- JQuery-->
-   <script
-  src="https://code.jquery.com/jquery-2.2.4.min.js"
-  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  crossorigin="anonymous"></script>
-  
-    <title>JQUERY_M2S10_EJERCICIO</title>
-
+    <title>Añadir y Eliminar Elementos con jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-
 <body>
-    
-</div>
-    <!-- JavaScript --> 
-     <script src="Assets/JS/logica.js"></script>
-    <!-- Bootstrap --> 
-     <script 
-     src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
-     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
-     crossorigin="anonymous"></script>
-</body>
 
+<h2>Ejemplo 1: Cambiar Texto</h2>
+<p id="parrafo">Este es el contenido original del párrafo.</p>
+<button id="cambiarTextoBtn">Cambiar Texto</button>
+
+<script>
+    $(document).ready(function(){
+        $("#cambiarTextoBtn").click(function(){
+            $("#parrafo").text("El contenido ha sido cambiado usando jQuery.");
+        });
+    });
+</script>
+
+<h2>Ejemplo 2: Cambiar Estilo</h2>
+<p id="parrafo">Este párrafo cambiará de estilo al hacer clic en el botón.</p>
+<button id="cambiarEstiloBtn">Cambiar Estilo</button>
+
+<script>
+    $(document).ready(function(){
+        $("#cambiarEstiloBtn").click(function(){
+            $("#parrafo").css({
+                "color": "blue",
+                "font-weight": "bold"
+            });
+        });
+    });
+</script>
+
+<h2>Ejemplo 3: Añadir y Eliminar Elementos</h2>
+<div id="contenedor">
+    <p>Elemento existente.</p>
+</div>
+<button id="añadirElementoBtn">Añadir Elemento</button>
+<button id="eliminarElementoBtn">Eliminar Último Elemento</button>
+
+<script>
+    $(document).ready(function(){
+        $("#añadirElementoBtn").click(function(){
+            $("#contenedor").append("<p>Este es un nuevo párrafo añadido con jQuery.</p>");
+        });
+
+        $("#eliminarElementoBtn").click(function(){
+            $("#contenedor p:last").remove();
+        });
+    });
+</script>
+
+</body>
 </html>
